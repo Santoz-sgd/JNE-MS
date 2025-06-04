@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agrupamento JNE Margem Sul</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(to right, #006400, #ff0000);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 1.8rem;
+    }
+    header img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: scale(1.1);
+    }
+    nav {
+      background: #e6e6e6;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #006400;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: #ff0000;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .content {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding-top: 20px;
+    }
+    .news-article {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .news-article:hover {
+      transform: translateY(-5px);
+    }
+    .news-article img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .news-article p {
+      padding: 10px;
+    }
+    .faq-item {
+      margin-bottom: 10px;
+    }
+    .faq-question {
+      cursor: pointer;
+      background: #006400;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .faq-answer {
+      display: none;
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: #006400;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #004d00;
+    }
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; gap: 15px; align-items: center;">
+      <img src="JNE1.png" alt="JNE Logo">
+      <img src="RP.png" alt="Governo Logo">
+    </div>
+    <div style="font-style:Times New Roman;">
+    <h1>Agrupamento JNE Margem Sul</h1>
+    </div>
+  </header>
+  <nav>
+    <a href="#" onclick="showPage('home')">Início</a>
+    <a href="#" onclick="showPage('noticias')">Notícias</a>
+    <a href="#" onclick="showPage('links')">Links</a>
+    <a href="#" onclick="showPage('contato')">Contate-nos</a>
+    <a href="#" onclick="showPage('faq')">FAQs</a>
+  </nav>
+
+  <section id="home" class="content active">
+    <h2>Bem-vindo ao Agrupamento JNE Margem Sul</h2>
+    <p>Explore as nossas seções para saber mais sobre as atividades, eventos, informações e contatos.</p>
+  </section>
+
+  <section id="noticias" class="content">
+    <h2>Notícias</h2>
+    <div class="news-container">
+      <div class="news-article">
+        <img src="https://via.placeholder.com/300x150" alt="Notícia 1">
+        <p>Notícia 1: Breve descrição da notícia aqui.</p>
+      </div>
+      <div class="news-article">
+        <img src="https://via.placeholder.com/300x150" alt="Notícia 2">
+        <p>Notícia 2: Breve descrição da notícia aqui.</p>
+      </div>
+      <div class="news-article">
+        <img src="https://via.placeholder.com/300x150" alt="Notícia 3">
+        <p>Notícia 3: Breve descrição da notícia aqui.</p>
+      </div>
+      <div class="news-article">
+        <img src="https://via.placeholder.com/300x150" alt="Notícia 4">
+        <p>Notícia 4: Breve descrição da notícia aqui.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="links" class="content">
+    <h2>Links úteis</h2>
+    <ul>
+      <li><a href="https://www.dge.mec.pt/" target="_blank">Direção-Geral da Educação</a></li>
+    </ul>
+  </section>
+
+  <section id="contato" class="content">
+    <h2>Contate-nos</h2>
+    <p>Endereço: Rua Luís Serrão Pimentel 3, 2800-996</p>
+    <p>Telefone: 212733516</p>
+    <p>Fax: 212733518</p>
+    <form onsubmit="alert('Mensagem enviada!'); return false;">
+      <input type="email" placeholder="Seu email" required>
+      <textarea placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section id="faq" class="content">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <div class="faq-question">Como me inscrevo?</div>
+      <div class="faq-answer">Você pode se inscrever através do formulário na seção de contato.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Onde estamos localizados?</div>
+      <div class="faq-answer">Na Rua Luís Serrão Pimentel 3, 2800-996.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Agrupamento JNE Margem Sul. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const a = q.nextElementSibling;
+        a.style.display = a.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
